@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment</title>
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="calc">
+        <div class="cont">
+            <div>
+                <label for="money">Amount of money:</label>
+                <input type="number" id="money" step="0.01" min="1">
+            </div>
+            <div>
+                <label for="round">Number of rounds:</label>
+                <input type="number" id="round" min="1">
+            </div>
+        </div>
+        <div class="sub">
+            <input type="submit" value="Calc">
+        </div>
+    </form>
+    <div class="sp">
+        <span id="val"></span>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

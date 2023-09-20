@@ -1,3 +1,9 @@
+.calc,
+.time {
+    margin-bottom: 40px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.541);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -18,6 +24,10 @@ form {
     form {
         display: block;
         width: 100%;
+    }
+
+    .formtime {
+        display: flex;
     }
 
     .cont div {
@@ -64,6 +74,7 @@ label {
     font-weight: bold;
     font-size: 25px;
     margin-right: 10px;
+    user-select: none;
 }
 
 span {
@@ -72,9 +83,14 @@ span {
     color: #28a745;
     margin-top: 25px;
     display: block;
+    margin-bottom: 10px;
 }
 
 .sp {
     display: flex;
     justify-content: center;
+}
+
+.lbltime {
+    height: 50px;
 }

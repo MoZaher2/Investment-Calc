@@ -140,7 +140,7 @@ function AddUser(Name, Money, Time, ID) {
   userInfoName.setAttribute("class", "user-info");
   userInfoMoney.setAttribute("class", "user-info");
   userInfoName.innerHTML = `Name: ${Name}`;
-  userInfoMoney.innerHTML = `Money back: ${+Money + Money * 0.05}$`;
+  userInfoMoney.innerHTML = `Money back: ${(+Money + Money * 0.05).toFixed(2)}$`;
   userDiv.appendChild(userInfoName);
   userDiv.appendChild(userInfoMoney);
   // Time
@@ -234,7 +234,7 @@ function AddUserCompleted(Name, Money, ID) {
   userInfoName.setAttribute("class", "user-info");
   userInfoMoney.setAttribute("class", "user-info");
   userInfoName.innerHTML = `Name: ${Name}`;
-  userInfoMoney.innerHTML = `Money back: ${+Money + Money * 0.05}$`;
+  userInfoMoney.innerHTML = `Money back: ${(+Money + Money * 0.05).toFixed(2)}$`;
   userDiv.appendChild(userInfoName);
   userDiv.appendChild(userInfoMoney);
   //

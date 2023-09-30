@@ -233,3 +233,6 @@ span {
     margin-left: 15px;
     cursor: pointer;
 }
+.AddCancel {
+    display:flex;
+}

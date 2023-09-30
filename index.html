@@ -10,20 +10,56 @@
 </head>
 
 <body>
+    <!-- Member -->
+    <div class="main">
+        <button id="addbtn">Add round</button>
+        <form class="add-member">
+            <div>
+                <label for="add-name">UserName:</label>
+                <input type="text" id="add-name">
+            </div>
+            <div>
+                <label for="add-time">Round Time:</label>
+                <input type="number" id="add-time" min="1">
+            </div>
+            <div>
+                <label for="add-money">Round Money:</label>
+                <input type="number" id="add-money" min="1">
+            </div>
+            <div>
+                <input type="submit" id="add" value="Add">
+                <input type="button" value="Cancel">
+            </div>
+        </form>
+        <div class="usersComplete">
+            
+        </div>
+        <div class="users">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
     <!-- Calculate Money -->
     <div class="calc">
         <form id="calc">
             <div class="cont">
                 <div>
                     <label for="money">Amount of money:</label>
-                    <input type="number" id="money" step="0.01" min="1">
+                    <input type="number" id="money" step="0.01" min="1" class="in-input">
                 </div>
                 <div>
                     <label for="round">Number of rounds:</label>
-                    <input type="number" id="round" min="1">
+                    <input type="number" id="round" min="1" class="in-input">
                 </div>
             </div>
-            <div class="sub">
+            <div class=" sub">
                 <input type="submit" value="Calc">
             </div>
         </form>
@@ -36,7 +72,7 @@
         <form id="calc" class="formtime">
             <div class="lbltime">
                 <label for="time">Time with minutes:</label>
-                <input type="number" id="time" min="1">
+                <input type="number" id="time" min="1" class="in-input">
             </div>
             <div class="sub">
                 <input type="submit" value="Calc">
@@ -44,12 +80,9 @@
         </form>
         <div class="sp">
             <span id="valtime"></span>
-            
             <span id="Fday"></span>
         </div>
     </div>
-
-
     <script src="main.js"></script>
 </body>
 

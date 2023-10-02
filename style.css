@@ -157,8 +157,15 @@ span {
 .users,
 .usersComplete {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 25px;
+    margin: 20px 5px;
+}
+
+.user {
+    border-radius: 20px;
+    border: 2px solid gray;
+    padding: 15px;
 }
 
 .user .user-info {
@@ -233,6 +240,7 @@ span {
     margin-left: 15px;
     cursor: pointer;
 }
+
 .AddCancel {
-    display:flex;
+    display: flex;
 }

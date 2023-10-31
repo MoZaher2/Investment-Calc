@@ -113,7 +113,7 @@ addRound.addEventListener("click", (ele) => {
   if (userName.value != "" && roundTime.value != "" && roundMoney.value != "") {
     // Add User
     let xT = new Date().getTime();
-    let Ftime = +roundTime.value * 60 * 1000 + xT;
+    let Ftime = (+roundTime.value * 60 * 1000 + xT)-360;
     AddUser(userName.value, roundMoney.value, Ftime, localStorage.ID);
     let Atemp = JSON.parse(localStorage.Users);
     Atemp.push({

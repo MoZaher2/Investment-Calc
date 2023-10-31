@@ -113,7 +113,7 @@ addRound.addEventListener("click", (ele) => {
   if (userName.value != "" && roundTime.value != "" && roundMoney.value != "") {
     // Add User
     let xT = new Date().getTime();
-    let Ftime = (+roundTime.value * 60 * 1000 + xT)-360;
+    let Ftime = (+roundTime.value * 60 * 1000 + xT);
     AddUser(userName.value, roundMoney.value, Ftime, localStorage.ID);
     let Atemp = JSON.parse(localStorage.Users);
     Atemp.push({
@@ -196,7 +196,7 @@ function AddUser(Name, Money, Time, ID) {
   userDiv.appendChild(ctimeDiv);
   users.appendChild(userDiv);
   let dateNow = new Date().getTime();
-  let dateDiff = +Time - dateNow;
+  let dateDiff = +Time - dateNow - 21600000;
 
   let DaysT = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
   let HoursT = Math.floor(

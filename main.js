@@ -18,14 +18,14 @@ if (!localStorage.UsersComplete) {
 if (!localStorage.Users) {
   localStorage.Users = JSON.stringify([]);
 } else {
-  let intcount = setInterval(() => {
+  // let intcount = setInterval(() => {
     users.innerHTML = "";
     let arr = JSON.parse(localStorage.Users);
     arr.sort((a, b) => a.roundTime - b.roundTime);
     for (let i = 0; i < arr.length; i++) {
       AddUser(arr[i].userName, arr[i].roundMoney, arr[i].roundTime, arr[i].ID);
     }
-  }, 1000);
+  // }, 1000);
 }
 if (!localStorage.ID) {
   localStorage.ID = 0;
@@ -113,7 +113,7 @@ addRound.addEventListener("click", (ele) => {
   if (userName.value != "" && roundTime.value != "" && roundMoney.value != "") {
     // Add User
     let xT = new Date().getTime();
-    let Ftime = +roundTime.value * 60 * 1000 + xT;
+    let Ftime = ((+roundTime.value-360) * 60 * 1000 + xT);
     AddUser(userName.value, roundMoney.value, Ftime, localStorage.ID);
     let Atemp = JSON.parse(localStorage.Users);
     Atemp.push({

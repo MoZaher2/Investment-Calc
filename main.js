@@ -18,14 +18,14 @@ if (!localStorage.UsersComplete) {
 if (!localStorage.Users) {
   localStorage.Users = JSON.stringify([]);
 } else {
-  // let intcount = setInterval(() => {
+   let intcount = setInterval(() => {
     users.innerHTML = "";
     let arr = JSON.parse(localStorage.Users);
     arr.sort((a, b) => a.roundTime - b.roundTime);
     for (let i = 0; i < arr.length; i++) {
       AddUser(arr[i].userName, arr[i].roundMoney, arr[i].roundTime, arr[i].ID);
     }
-  // }, 1000);
+   }, 1000);
 }
 if (!localStorage.ID) {
   localStorage.ID = 0;

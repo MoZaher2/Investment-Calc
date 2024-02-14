@@ -18,14 +18,14 @@ if (!localStorage.UsersComplete) {
 if (!localStorage.Users) {
   localStorage.Users = JSON.stringify([]);
 } else {
-  // let intcount = setInterval(() => {
+  let intcount = setInterval(() => {
     users.innerHTML = "";
     let arr = JSON.parse(localStorage.Users);
     arr.sort((a, b) => a.roundTime - b.roundTime);
     for (let i = 0; i < arr.length; i++) {
       AddUser(arr[i].userName, arr[i].roundMoney, arr[i].roundTime, arr[i].ID);
     }
-  // }, 1000);
+  }, 1000);
 }
 if (!localStorage.ID) {
   localStorage.ID = 0;
@@ -224,6 +224,8 @@ function AddUser(Name, Money, Time, ID) {
       return ele.ID != ID;
     });
     localStorage.Users = JSON.stringify(darray);
+    //New Notifications
+    SendNotification(Name,Money);
   }
 }
 function AddUserCompleted(Name, Money, ID) {
@@ -272,5 +274,20 @@ function ReDone() {
       arrComplete[i].BackMoney,
       arrComplete[i].ID
     );
+  }
+}
+//New Notifications
+async function SendNotification(Name,Money){
+  if(!window.Notification){
+      alert("Browser don't allow notification");
+      return;
+  }
+  let permission=await Notification.requestPermission()
+  if(permission==="granted"){
+      let not=new Notification(`${Name}'s round has finished`,{
+          body:`${Name}'s round finished and get back a ${(+Money + Money * 0.05).toFixed(2)} coins`,
+          icon:"./icon.jpg",
+          dir:"ltr"
+      })
   }
 }
